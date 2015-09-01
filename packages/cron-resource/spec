@@ -1,0 +1,5 @@
+---
+name: cron-resource
+dependencies: []
+files:
+- cron-resource/rootfs.tar
