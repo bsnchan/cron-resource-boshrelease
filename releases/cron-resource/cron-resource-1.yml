@@ -1,0 +1,16 @@
+---
+packages:
+- name: cron-resource
+  version: d22cd063528d84fbbe9bbe87e70d357f83b439fe
+  fingerprint: d22cd063528d84fbbe9bbe87e70d357f83b439fe
+  sha1: 630cb662578b8782d518e86ab2c94be3b9d4dcf1
+  dependencies: []
+jobs:
+- name: install_cron_resource_package
+  version: 305b97c98ee8bd7427dea22a34744f56b51b5425
+  fingerprint: 305b97c98ee8bd7427dea22a34744f56b51b5425
+  sha1: 446c04c468ecf0a0c777617113e716e1a75afe54
+commit_hash: c0e911d9
+uncommitted_changes: true
+name: cron-resource
+version: '1'
