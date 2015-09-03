@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: s3
+  options:
+    bucket_name: cron-resource-boshrelease-blobs
+final_name: cron-resource

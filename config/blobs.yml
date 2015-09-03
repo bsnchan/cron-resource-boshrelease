@@ -1,1 +1,5 @@
---- {}
+---
+cron-resource/rootfs.tar:
+  object_id: a1c7708f-448b-47f8-a479-fa4277a117aa
+  sha: 887b6a6a4bd7732056ade386af94e6e11d9f9c3b
+  size: 9399296
