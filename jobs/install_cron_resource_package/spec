@@ -1,5 +1,5 @@
 ---
-name: just_install_packages
+name: install_cron_resource_package
 packages: [cron-resource]
 templates:
   ignoreme: ignoreme
