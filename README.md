@@ -29,7 +29,7 @@ jobs:
 - name: worker
   templates:
     ...
-    - {release: cron-resource, name: just_install_packages}
+    - {release: cron-resource, name: install_cron_resource_package}
 ```
 
 Add the cron-resource package path to your worker's property:
@@ -69,7 +69,7 @@ jobs:
         image: /var/vcap/packages/bosh_io_stemcell_resource
       - type: bosh-deployment
         image: /var/vcap/packages/bosh_deployment_resource
-      - type: cron-notification
+      - type: cron
         image: /var/vcap/packages/cron-resource
 ```
 
