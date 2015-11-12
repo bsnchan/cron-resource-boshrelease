@@ -1,6 +1,6 @@
 # Cron Resource BOSH release
 
-This BOSH release packages the [crontab resource](https://github.com/pivotal-cf-experimental/croncourse-resource) for Concourse.
+This BOSH release packages the [crontab resource](https://github.com/pivotal-cf-experimental/cron-resource) for Concourse.
 
 ## Add to your Concourse deployment
 
