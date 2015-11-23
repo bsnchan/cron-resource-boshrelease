@@ -1,0 +1,3 @@
+[submodule "src/github.com/pivotal-cf-experimental/cron-resource"]
+	path = src/github.com/pivotal-cf-experimental/cron-resource
+	url = https://github.com/pivotal-cf-experimental/cron-resource

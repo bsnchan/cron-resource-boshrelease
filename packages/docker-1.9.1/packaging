@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e -x
+
+DOCKER_BIN_PATH=${BOSH_INSTALL_TARGET}/bin
+
+mkdir -p $DOCKER_BIN_PATH
+
+cp docker/docker-1.9.1 $DOCKER_BIN_PATH/docker
+
+export PATH=${PATH}:${DOCKER_BIN_PATH}
+
+chmod +x ${DOCKER_BIN_PATH}/docker

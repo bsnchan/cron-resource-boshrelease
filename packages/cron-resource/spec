@@ -1,5 +1,8 @@
 ---
 name: cron-resource
-dependencies: []
+dependencies:
+  - golang-1.4
+  - docker-1.9.1
 files:
-- cron-resource/rootfs.tar
+- github.com/pivotal-cf-experimental/cron-resource/**/*.{go,zip}
+- github.com/pivotal-cf-experimental/cron-resource/Dockerfile

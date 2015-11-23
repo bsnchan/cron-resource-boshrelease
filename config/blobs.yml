@@ -3,3 +3,11 @@ cron-resource/rootfs.tar:
   object_id: a1c7708f-448b-47f8-a479-fa4277a117aa
   sha: 887b6a6a4bd7732056ade386af94e6e11d9f9c3b
   size: 9399296
+docker/docker-1.9.1:
+  object_id: 4fdab238-d9b3-448a-9192-a25e85a807e8
+  sha: 424920b09c24d7c7876cc35d8aabd2aa52b8e39e
+  size: 30222575
+golang/go1.4.3.linux-amd64.tar.gz:
+  object_id: a7a33aee-6871-4d3d-8cc7-bd23262a1306
+  sha: 332b64236d30a8805fc8dd8b3a269915b4c507fe
+  size: 61210288

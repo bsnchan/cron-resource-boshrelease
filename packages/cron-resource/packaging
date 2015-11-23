@@ -1,5 +1,46 @@
-#!/bin/bash
+set -e
 
-set -e -x
+REPO_NAME=github.com/pivotal-cf-experimental/cron-resource
+REPO_DIR=${BOSH_INSTALL_TARGET}/src/${REPO_NAME}
+GO=/var/vcap/packages/golang-1.4/bin/go
+DOCKER=/var/vcap/packages/docker-1.9.1/bin/docker
+DOCKER_NAME=cron-resource
 
-tar xf cron-resource/rootfs.tar -C ${BOSH_INSTALL_TARGET}
+export GOROOT=$(readlink -nf /var/vcap/packages/golang-1.4)
+export GOPATH=$BOSH_INSTALL_TARGET:${REPO_DIR}/Godeps/_workspace
+export PATH=$GOROOT/bin:$PATH
+
+
+mkdir -p $(dirname $REPO_DIR)
+cp -a $REPO_NAME/ $REPO_DIR
+
+pushd ${REPO_DIR}
+
+  $GO build -o built-in in/main.go
+  $GO build -o built-check check/check.go
+
+  # mount cgroups to run docker daemon
+  if ! mountpoint -q /sys/fs/cgroup; then
+    mkdir -p /sys/fs/cgroup
+    mount -t tmpfs -o uid=0,gid=0,mode=0755 cgroup /sys/fs/cgroup
+  fi
+  for d in $(tail -n +2 /proc/cgroups | awk '{print $1}'); do
+    mkdir -p /sys/fs/cgroup/$d
+
+    if ! mountpoint -q /sys/fs/cgroup/$d; then
+      mount -n -t cgroup -o $d cgroup /sys/fs/cgroup/$d
+    fi
+  done
+
+  ($DOCKER daemon)&
+  $DOCKER build -t ${DOCKER_NAME} .
+  ($DOCKER run -i ${DOCKER_NAME} /bin/sh -c "sleep 5")&
+  sleep 1
+  id=`$DOCKER ps -q`
+  $DOCKER export $id > rootfs.tar
+
+  pkill -9 -f 'docker daemon'
+
+  tar xf rootfs.tar -C ${BOSH_INSTALL_TARGET}
+
+popd
