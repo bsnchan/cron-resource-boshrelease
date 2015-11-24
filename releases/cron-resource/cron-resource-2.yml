@@ -1,0 +1,32 @@
+---
+packages:
+- name: cron-resource
+  version: 75ddca02a396320547f57baefe438f233dc632aa
+  fingerprint: 75ddca02a396320547f57baefe438f233dc632aa
+  sha1: 5ef9ac16781083f772049a7702065cebbbaf26cb
+  dependencies:
+  - docker-1.9.1
+  - golang-1.4
+- name: docker-1.9.1
+  version: 3ba243add5052965838c8eebf49c17ae5c59fdb0
+  fingerprint: 3ba243add5052965838c8eebf49c17ae5c59fdb0
+  sha1: 37a9a7703711e32892a405698409d7d39e7cbbf3
+  dependencies: []
+- name: golang-1.4
+  version: 714698bc352d2a1dbe321376f0676037568147bb
+  fingerprint: 714698bc352d2a1dbe321376f0676037568147bb
+  sha1: 33fb90e099117720e60b491a5d9d9f306a6b0189
+  dependencies: []
+jobs:
+- name: install_cron_resource_package
+  version: 305b97c98ee8bd7427dea22a34744f56b51b5425
+  fingerprint: 305b97c98ee8bd7427dea22a34744f56b51b5425
+  sha1: 446c04c468ecf0a0c777617113e716e1a75afe54
+license:
+  version: 89ed4724c9ca98127b2cd3361bb2f0d240243f4e
+  fingerprint: 89ed4724c9ca98127b2cd3361bb2f0d240243f4e
+  sha1: 0e40ab442b2829ad41295f03491530288f8ebd5e
+commit_hash: 26ab0506
+uncommitted_changes: true
+name: cron-resource
+version: '2'
